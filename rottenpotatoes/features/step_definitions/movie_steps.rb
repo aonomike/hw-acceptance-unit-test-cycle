@@ -52,5 +52,9 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
+end
 
+Then /the director of "(.*)" should be "(.*)"/ do |title, director|
+   # Write code here that turns the phrase above into concrete actions
+   expect(Movie.where(title: title).first.director).to eql(director)
 end
