@@ -30,7 +30,8 @@ module NavigationHelpers
     when /^the Similar Movies page for "(.*)"$/i
         movies_by_director_path(Movie.find_by title: $1)
 
-
+    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
+    when /^the movies page$/ then '/movies'
     else
       begin
         page_name =~ /^the (.*) page$/
